@@ -34,10 +34,4 @@
   background-color: red;
 }
 
-@media screen and (max-width: 768px) {
-  .heart-red,
-  .heart-red:before,
-  .heart-red:after:hover {
-    background-color: white;
-  }
-}
+
