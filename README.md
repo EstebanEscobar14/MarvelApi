@@ -1,27 +1,81 @@
-# ChallengeHeroes
+# Proyecto Challenge 1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Este repositorio contiene el código desarrollado para una aplicación web de listado y detalle de personajes utilizando Angular y la API de Marvel.
 
-## Development server
+## Ejecutar la Aplicación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para ejecutar la aplicación en tu entorno local, sigue estos pasos:
 
-## Code scaffolding
+1. **Clona el Repositorio:**
+   ```
+   git clone <URL-del-repositorio>
+   ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. **Instala las Dependencias:**
+   ```
+   npm install
+   ```
 
-## Build
+3. **Configura la API de Marvel:**
+   - Obtén tus claves de API de Marvel desde [Marvel Developer Portal](https://developer.marvel.com).
+   - Crea un archivo `src/environments/environment.ts` y añade tus claves:
+     ```typescript
+     export const environment = {
+       production: false,
+       marvelApiKey: 'your_public_key',
+       marvelApiSecret: 'your_private_key'
+     };
+     ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. **Inicia la Aplicación:**
+   ```
+   ng serve -o
+   ```
 
-## Running unit tests
+La aplicación estará disponible en `http://localhost:4200`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Arquitectura y Estructura
 
-## Running end-to-end tests
+La aplicación está desarrollada en Angular y sigue una estructura modular y componentizada.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+src/
+│
+├── app/
+│   ├── components/       # Componentes reutilizables
+│   │   ├── card/
+│   │   ├── heart/
+│   │   └── search/
+│   │
+│   ├── pages/            # Páginas principales de la aplicación
+│   │   ├── hero/
+│   │   ├── favorites/
+│   │   └── hero-details/
+│   │
+│   ├── services/         # Servicios para interactuar con la API de Marvel
+│   │   ├── marvel.service.ts
+│   │   └── favorite.service.ts
+│   │
+│   ├── heroes-routing.module.ts           #rutas 
+│   ├── heroes.module.ts            
+│        
+│   
+│
+└── environments/
+    ├── environment.ts    # Configuración de entorno (desarrollo)
+    └── environment.prod.ts   # Configuración de entorno (producción)
+```
 
-## Further help
+## Información del Proyecto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este proyecto consiste en una interfaz web responsive desarrollada con Angular que permite listar y ver detalles de personajes del universo Marvel. Incluye las siguientes características:
+
+- **Vista Principal:**
+  - Listado de hasta 50 personajes o resultados de búsqueda.
+  - Búsqueda por nombre de personaje.
+  - Funcionalidad para agregar personajes a favoritos y visualizar favoritos.
+  - Persistencia de favoritos entre sesiones.
+
+- **Detalle de Personaje:**
+  - Información detallada del personaje incluyendo cómics en los que aparece.
+  - Visualización de hasta 20 cómics por personaje.

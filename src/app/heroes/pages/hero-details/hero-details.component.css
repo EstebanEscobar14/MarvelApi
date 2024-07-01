@@ -1,0 +1,188 @@
+.container-page-full {
+  margin: 0 auto;
+  overflow: hidden; /* Evita desbordamientos horizontales */
+}
+
+.hero-detail {
+  color: #333;
+}
+
+.hero-detail__header {
+  background-color: #000;
+  color: white;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.hero-detail__container__full {
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.hero-detail__image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.hero-detail__info {
+  flex: 1;
+}
+
+.hero-detail__name__container {
+  display: flex;
+  align-items: center;
+}
+
+.hero-detail__name {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  flex: 1;
+}
+
+.hero-detail__favorite {
+  margin-left: 20px; /* Ajustado para pantallas pequeñas */
+  cursor: pointer;
+}
+
+.hero-detail__description {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.hero-detail__comics {
+  margin: 20px auto;
+  max-width: 1200px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.hero-detail__comics-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-detail__comics-slider {
+  display: flex;
+  overflow-x: auto; /* Permite el desplazamiento horizontal */
+  position: relative;
+  padding-bottom: 20px;
+  align-items: center;
+  scroll-snap-type: x mandatory; /* Facilita el "encaje" en elementos del slider */
+}
+
+.hero-detail__comics-slider-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory; /* Facilita el "encaje" en elementos del slider */
+}
+
+.hero-detail__comics-slider-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-detail__comic {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  scroll-snap-align: start; /* Facilita el "encaje" en elementos del slider */
+}
+
+.hero-detail__comic-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.hero-detail__comic-title {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.hero-detail__comic-description {
+  font-size: 12px;
+  color: #666;
+}
+
+.hero-detail__progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: red;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-detail__container__full {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-detail__container__full {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-detail__image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-detail__favorite {
+    margin-left: 9px;
+    margin-top: 10px;
+  }
+
+  .hero-detail__comics-slider-inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .hero-detail__comic {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-detail__name {
+    font-size: 24px;
+  }
+
+  .hero-detail__description {
+    font-size: 16px;
+  }
+
+  .hero-detail__comics-title {
+    font-size: 20px;
+  }
+
+  .hero-detail__comic-image {
+    width: 120px;
+  }
+
+  .hero-detail__comic-title {
+    font-size: 12px;
+  }
+
+  .hero-detail__comic-description {
+    font-size: 10px;
+  }
+}

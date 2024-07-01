@@ -1,0 +1,9 @@
+<app-heroes-page></app-heroes-page>
+
+<div class="container-page-full">
+  <div class="character-search">
+    <app-search (search)="searchCharacters($event)"></app-search>
+  </div>
+  <div class="results-count">{{ characters.length }} RESULTS</div>
+  <app-card class="character-list"></app-card>
+</div>

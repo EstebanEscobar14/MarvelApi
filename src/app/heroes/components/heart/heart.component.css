@@ -1,0 +1,43 @@
+.heart {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  position: relative;
+  display: inline-block;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart:before {
+  top: -7px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: -7px;
+}
+
+.heart-red,
+.heart-red:before,
+.heart-red:after {
+  background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .heart-red,
+  .heart-red:before,
+  .heart-red:after {
+    background-color: white;
+  }
+}

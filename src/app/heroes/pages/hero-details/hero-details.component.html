@@ -1,0 +1,47 @@
+<app-heroes-page></app-heroes-page>
+<div class="container-page-full">
+  <div class="hero-detail" *ngIf="hero">
+    <div class="hero-detail__header">
+      <div class="hero-detail__container__full">
+        <img
+          [src]="hero.thumbnail?.path + '.' + hero.thumbnail!.extension"
+          alt="{{ hero.name }}"
+          class="hero-detail__image ml-8 rounded-lg object-cover"
+        />
+        <div class="hero-detail__info">
+          <div class="hero-detail__name__container">
+            <h1 class="hero-detail__name">
+              {{ hero.name || "Hero Name" | uppercase }}
+            </h1>
+            <app-heart class="hero-detail__favorite" [character]="hero"></app-heart>
+          </div>
+          <p class="hero-detail__description">
+            {{ hero.description || "No description available" }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-detail__comics">
+      <h2 class="hero-detail__comics-title">
+        COMICS
+      </h2>
+      <div class="hero-detail__comics-slider">
+        <div class="hero-detail__comics-slider-inner" #comicsSlider>
+          <div class="hero-detail__comic" *ngFor="let comic of comics">
+            <img
+              [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
+              alt="{{ comic.title }}"
+              class="hero-detail__comic-image"
+            />
+            <p class="hero-detail__comic-title">{{ comic.title }}</p>
+            <p class="hero-detail__comic-description">
+              {{ getComicYear(comic) }}
+            </p>
+          </div>
+        </div>
+        <div class="hero-detail__progress-bar" #progressBar></div>
+      </div>
+    </div>
+  </div>
+
+</div>

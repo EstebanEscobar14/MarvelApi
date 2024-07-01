@@ -1,0 +1,32 @@
+<app-heroes-page></app-heroes-page>
+<div class="container-page-full">
+  <div class="character-search">
+    <app-search [searchInFavorites]="true" (search)="onSearch($event)"></app-search>
+  </div>
+  <h2>FAVORITES</h2>
+  <div class="results-count">{{ favoriteCharacters.length }} RESULTS</div>
+  <div class="character-list">
+    <div
+      class="character-list__item"
+      *ngFor="let character of favoriteCharacters"
+    >
+      <div class="character-card">
+        <img
+          (click)="goToDetails(character.id)"
+          [src]="
+            character.thumbnail?.path + '.' + character.thumbnail?.extension
+          "
+          class="character-card__image"
+          [alt]="character.name"
+        />
+        <div class="character-card__spacer"></div>
+        <div class="character-card__content">
+          <h5 class="character-card__name">{{ character.name || "NAME" }}</h5>
+          <button class="character-card__favorite">
+            <app-heart [character]="character"></app-heart>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

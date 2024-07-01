@@ -1,0 +1,131 @@
+.container-page-full {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.character-search {
+  margin: 20px 0;
+}
+
+.results-count {
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+.character-list__item {
+  flex: 1 0 14%;
+  max-width: 14%;
+  box-sizing: border-box;
+}
+
+.character-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.character-card__image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.character-card__spacer {
+  background-color: red;
+  width: 100%;
+  height: 5px;
+}
+
+.character-card__content {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  height: 50px;
+}
+
+.character-card__content:hover {
+  color: #fff;
+  background-color: red;
+}
+
+.character-card__name {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.character-card__favorite {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .character-list__item {
+    flex: 1 0 21%;
+    max-width: 21%;
+  }
+}
+
+@media (max-width: 768px) {
+  .character-search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .character-list__item {
+    flex: 1 0 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-list__item {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+
+  .character-card {
+    height: auto;
+  }
+
+  .character-card__name {
+    font-size: 1em;
+  }
+
+  .character-card__content {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .character-card__favorite {
+    align-self: flex-end;
+  }
+}
