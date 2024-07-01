@@ -88,11 +88,6 @@
     flex: 1 0 45%;
     max-width: 45%;
   }
-
-  .character-card__content:hover {
-    color: #fff;
-    background-color: red;
-  }
 }
 
 @media (max-width: 480px) {
