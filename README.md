@@ -2,7 +2,7 @@
 
 Este repositorio contiene el código desarrollado para una aplicación web de listado y detalle de personajes utilizando Angular y la API de Marvel.
 
-## Ejecutar la Aplicación
+## Ejecutar la Aplicacion
 
 Para ejecutar la aplicación en tu entorno local, sigue estos pasos:
 
