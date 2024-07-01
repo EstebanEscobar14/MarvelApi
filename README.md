@@ -23,7 +23,7 @@ Para ejecutar la aplicación en tu entorno local, sigue estos pasos:
      export const environment = {
        production: false,
        marvelApiKey: 'your_public_key',
-       marvelApiSecret: 'your_private_key'
+       marvelApiSecret: 'hash'
      };
      ```
 
